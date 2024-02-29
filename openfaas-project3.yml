@@ -1,0 +1,17 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  openfaas-project3:
+    lang: python3-debian
+    build_args:
+      ADDITIONAL_PACKAGE: "ffmpeg"
+    handler: ./openfaas-project3
+    image: keyapatel142/openfaas-project3:latest
+    environment:
+      AWS_ACCESS_KEY_ID: AKIAVHCA2VB7CBFX6MPW
+      AWS_SECRET_ACCESS_KEY: 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
+      AWS_REGION: us-east-1
+    files:
+      - encoding
